@@ -1,5 +1,5 @@
 exports.data = {
-  title: "My Rad Blog"
+  blog_title: "My Rad Blog"
 };
 
 exports.render = function (data) {
@@ -8,9 +8,10 @@ exports.render = function (data) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${data.title}</title>
+    <title>${blog_title} | ${data.title}</title>
   </head>
   <body>
+    <h1>${data.title}</h1>
     ${data.content}
   </body>
 </html>`;
