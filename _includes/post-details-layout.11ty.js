@@ -1,98 +1,19 @@
+const head = require("./global/head.11ty.js");
 const contact = require("./global/contact.11ty.js");
+const menu = require("./global/menu.11ty.js");
 
 exports.data = {
-  blog_title: "dlw"
+    blog_title: "dlw"
 };
 
 exports.render = function ({ blog_title, title, content }) {
-  return `<!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>${blog_title} | ${title}</title>
-      <meta name="description" content="">
-  
-      <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
-      <!--Replace with your tailwind.css once created-->
-  
-      <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
-  
-      <style>
-          .quicksand {
-              font-family: 'Nunito', sans-serif;
-          }
-          
-          ::selection {
-              background: #E9D8FD;
-        color:#202684;
-  
-              /* WebKit/Blink Browsers */
-          }
-          
-          ::-moz-selection {
-              background: #E9D8FD;
-        color:#202684;
-              /* Gecko Browsers */
-          }
-          
-          a:not(.nav) {
-              font-weight: bold;
-              text-decoration: none;
-              padding: 2px;
-              background: linear-gradient(to right, #5A67D8, #5A67D8);
-              background-repeat: repeat-x;
-              background-size: 100% 2px;
-              background-position: 0 95%;
-              -webkit-transition: all 150ms ease-in-out;
-              -moz-transition: all 150ms ease-in-out;
-              -ms-transition: all 150ms ease-in-out;
-              -o-transition: all 150ms ease-in-out;
-              transition: all 150ms ease-in-out;
-          }
-          
-          a:hover {
-              color: #B794F4;
-              font-weight: bold;
-              text-decoration: none;
-              padding-bottom: 2px;
-              background: linear-gradient(to right, #9F7AEA, #E9D8FD);
-              background-repeat: repeat-x;
-              background-size: 100% 2px;
-              background-position: 50% 95%;
-              -webkit-transition: color 150ms ease-in-out;
-              -moz-transition: color 150ms ease-in-out;
-              -ms-transition: color 150ms ease-in-out;
-              -o-transition: color 150ms ease-in-out;
-              transition: color 150ms ease-in-out;
-          }
-          
-          a:focus {
-              outline: none;
-              background: #E9D8FD;
-          }
-      </style>
-  
-  </head>
-  
+    return `<!DOCTYPE html>
+  <html lang="en">  
+  ${head(blog_title, title)}
   <body class="bg-gray-100 text-gray-700 font-sans quicksand">
   
       <div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
-  
-          <div class="w-full md:w-1/2 md:pr-32 order-3 md:order-1">
-              <div class="max-w-md md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 ">
-                  <p class="font-bold my-4 md:my-12">Previous Posts</p>
-  
-                  <ul class="flex flex-wrap justify-between flex-col">
-                      <li><a href="#" class="nav">Previous blog posts links</a></li>
-                      <li><a href="#" class="nav">A diam sollicitudin tempor id eue</a></li>
-                      <li><a href="#" class="nav">Lectus vestibulum mattis ullamcorper velit sed ullamcorper</a></li>
-                      <li><a href="#" class="nav">Pulvinar etiam non quam lacus suspendisse faucibus</a></li>
-                  </ul>
-                  <a href="#" class="normal font-bold hover:font-bold">more...</a>
-              </div>
-          </div>
+            ${menu()}
           <div class="w-full md:w-1/2 order-1 md:order-2">
               <div class="max-w-md leading-loose tracking-tight">
                   <h1 class="font-bold my-12">${title}</h1>
